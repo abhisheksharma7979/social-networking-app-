@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get'signup' ,to: 'users#new'
   #resources :users, except: [:new]
   resources :users , only: [:show ,:index]
-  #resources :comments, only: [:new,:create]
+  resources :comments, only: [:new,:create]
 end
