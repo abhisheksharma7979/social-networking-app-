@@ -9,8 +9,8 @@ class CommentsController < ApplicationController
       @comment=Comment.new(comment_params)
         if @comment.save
           flash[:notice]="Comment Successfully Added"
-          #redirect_to post_path(@comment.post_id)
-          redirect_back fallback_location: @post
+          redirect_to post_path(@comment.post_id)
+          #redirect_back fallback_location: @post
         else
           flash.now[:alert]="Fill correct details"
               render 'new'
