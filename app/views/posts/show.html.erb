@@ -15,7 +15,7 @@
                   edited <%= time_ago_in_words(@post.updated_at) %> ago</small>
                 </div>
           </div>
-            <% if user_signed_in? && @post.user!=current_user %>
+            <% if user_signed_in?  %>
               <%= form_with scope: :comment, url: comments_path, local: true do |f|%>
                 <div class="form-group row justify-content-center">
                   <div class="col-10">
