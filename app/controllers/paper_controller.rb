@@ -1,8 +1,5 @@
 class PapersController < ActionController::Base
-
-    def home
-    end
-
-   
-    
+  def home
+  end
+ 
 end

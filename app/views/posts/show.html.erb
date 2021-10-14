@@ -6,26 +6,25 @@
           <div class="card text-center shadow mb-5 bg-white rounded">
             <div class="card-header font-italic">
               by <%= @post.user.email if @post.user %>
-    
             </div>
-            <div class="card-body">
-              <div class="card-text text-left"><%= simple_format(@post.description) %></div>
+              <div class="card-body">
+                <div class="card-text text-left"><%= simple_format(@post.description) %></div>
               </div>
-              <div class="card-footer text-muted">
-                <small>Created <%= time_ago_in_words(@post.created_at) %> ago, 
-                edited <%= time_ago_in_words(@post.updated_at) %> ago</small>
-              </div>
-            </div>
-                 <% if user_signed_in? && @post.user!=current_user %>
-                   <%= form_with scope: :comment, url: comments_path, local: true do |f|%>
-                    <div class="form-group row justify-content-center">
+                <div class="card-footer text-muted">
+                  <small>Created <%= time_ago_in_words(@post.created_at) %> ago, 
+                  edited <%= time_ago_in_words(@post.updated_at) %> ago</small>
+                </div>
+          </div>
+            <% if user_signed_in? && @post.user!=current_user %>
+              <%= form_with scope: :comment, url: comments_path, local: true do |f|%>
+                <div class="form-group row justify-content-center">
+                  <div class="col-10">
+                    <%= f.text_area :data,rows:3, class:"form-control shadow-sm bg-white rounded",placeholder:"Comment on Post" %>
+                  </div>
+                    <div class="form-group row">
                       <div class="col-10">
-                        <%= f.text_area :data,rows:3, class:"form-control shadow-sm bg-white rounded",placeholder:"Comment on Post" %>
-                      </div>
-                        <div class="form-group row">
-                          <div class="col-10">
-                            <%= f.number_field :post_id, id: :comment_post_id, class:"form-control", value: @post.id,type: :hidden %>
-                          </div>   
+                        <%= f.number_field :post_id, id: :comment_post_id, class:"form-control", value: @post.id,type: :hidden %>
+                      </div>   
                         </div>
                           <div class="form-group row">
                             <div class="col-10">
@@ -51,6 +50,10 @@
                                    <div class="card-body">
                                      <%= comment.data %>
                                    </div>
+                                     <div class="card-footer text-muted">
+                                       <small>Created <%= time_ago_in_words(@post.created_at) %> ago, 
+                                       edited <%= time_ago_in_words(@post.updated_at) %> ago</small>
+                                     </div>
                                </div>
                            <% end %>  
                        <% end %>  
@@ -58,3 +61,5 @@
         </div>
       </div>
 </div>   
+                                     
+    

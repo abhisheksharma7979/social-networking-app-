@@ -13,19 +13,22 @@
   {
       float: left;
       font-size: 1.7em;
-      color: #fff;
+      color:white;
       text-transform: uppercase;
       letter-spacing: -1px;
       font-weight: bold;
   }
   #home-container{
       margin-top: 25px;
+      
   }
   .jumbotron{
-      background-image: asset-url('alpha.jpg');
+      background-image: asset-url('img1.jpeg');
       background-repeat: no-repeat;
-     background-size: cover;
-     height: 425px;
+      background-size: cover;
+      height: 425px;
+      color: black;
+
   }
   html,
   body {
@@ -38,3 +41,4 @@
 #sticky-footer {
   flex-shrink: none;
 }
+

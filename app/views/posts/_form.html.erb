@@ -15,21 +15,17 @@
                 <%= f.text_area :description, rows: 10, class: "form-control shadow rounded", placeholder: "Description of post" %>
               </div>
           </div>
-
-           <div class="field form-group row">
-        <%= f.label :image, class:"col-2 col-form-label text-white font-weight-bold" %>
-        <%= f.file_field :image, class:"col-form-label text-white font-weight-bold" %>
-          </div>
-
-          <div class="form-check">
-        <%= f.check_box :private %>
-        <%= f.label :private, class:"col-2 col-form-label text-white font-weight-bold"%>
-        </div>
-
-
-            <div class="form-group row justify-content-center">
-              <%= f.submit class: "btn btn-outline-light btn-lg" %>
+            <div class="field form-group row">
+              <%= f.label :image, class:"col-2 col-form-label text-white font-weight-bold" %>
+              <%= f.file_field :image, class:"col-form-label text-white font-weight-bold" %>
             </div>
+              <div class="form-check">
+                <%= f.check_box :private %>
+                <%= f.label :private, class:"col-2 col-form-label text-white font-weight-bold"%>
+              </div>
+                <div class="form-group row justify-content-center">
+                  <%= f.submit class: "btn btn-outline-light btn-lg" %>
+                </div>
            <% end %>
     </div>
       <div class="mb-3">
@@ -37,3 +33,5 @@
       </div>
   </div>
 </div> 
+
+

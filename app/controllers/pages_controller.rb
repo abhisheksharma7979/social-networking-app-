@@ -1,10 +1,10 @@
-class PagesController < ActionController::Base
+class PagesController < ApplicationController
+  def home
+    #byebug
+    render :home
+  end
 
-    def home
-    end
-
-    def about
-    end
-
-    
+  def about
+  end
+  
 end
