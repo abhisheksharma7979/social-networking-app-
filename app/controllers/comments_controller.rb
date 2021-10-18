@@ -13,12 +13,10 @@ class CommentsController < ApplicationController
       flash.now[:alert] = 'Fill correct details'
       render 'new'
     end
-
   end
 
   def comment_params
     params.require(:comment).permit(:data, :post_id, :user_id)
   end
-  
-end
 
+end

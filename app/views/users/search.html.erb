@@ -13,15 +13,15 @@
                       <%= image_tag("defualt.png", style:'width:30%') %>
                   <% end %>    
               </div>
-                <div class="card-body">
-                  <h5 class="card-title"><%= pluralize(user.posts.count,"Post") %></h5>
-                  <%= link_to "View Profile", user_path(user), class: "btn btn btn-outline-success" %>
-                </div>
-                  <div class="card-footer text-muted">
-                    <small>
-                      Joined <%= time_ago_in_words(user.created_at) %> ago
-                    </small>
-                  </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= pluralize(user.posts.count,"Post") %></h5>
+                <%= link_to "View Profile", user_path(user), class: "btn btn btn-outline-success" %>
+              </div>
+              <div class="card-footer text-muted">
+               <small>
+                 Joined <%= time_ago_in_words(user.created_at) %> ago
+               </small>
+              </div>
             </div>
           </div>
         </div>

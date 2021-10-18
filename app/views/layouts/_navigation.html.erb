@@ -8,8 +8,6 @@
         <li class="nav-item active">
           <%= link_to "About", about_path, class: "nav-link" %> 
         </li>
-        <li class="nav-item">
-        </li>
         <li class="nav-item dropdown">
           <% if user_signed_in? %>
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,42 +19,38 @@
                 <div class="dropdown-divider"></div>
                   <%= link_to "Home", root_path, class: "dropdown-item" %>
                 </div>
+            </div>    
         </li>
-                <%end%>
-             <li class="nav-item">
-               <% if user_signed_in? %>
-                 <%= link_to 'sign out' , destroy_user_session_path, class: "nav-link" ,method: :delete %>
-                   <%else%>
-                      <%=   link_to 'sign in ' ,  new_user_session_path, class: "nav-link", method: :post %>
-                    <%end%>
-                    <% if user_signed_in? %>
-                      <li class="nav-item dropdown">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <%= link_to current_user.email,class:"btn btn-light dropdown-toggle" %>
-                        </button> 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <%= link_to "View Profile", user_path(current_user), class: "dropdown-item" %>
-                          <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %> 
-                          <%= link_to "Create post", new_post_path, class: "dropdown-item" %> 
-                          <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete%> 
-                        </div>
-                      </li>
-                <%end%>
-            </li>
-            <&nbsp>
-             <% if user_signed_in? %>
-               <li class="nav-item">
-                 <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
-                   <input class="form-control mr-sm-2" type="search" placeholder="search any user" aria-label="Search" name="query">
-                     <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
-                 </form>
-              </li>  
-             <% end %>
-        </ul>
-      </div>
-</nav>
-        
-
-
-
-        
+          <%end%>
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to 'sign out' , destroy_user_session_path, class: "nav-link" ,method: :delete %>
+              <%else%>
+              <%=   link_to 'sign in ' ,  new_user_session_path, class: "nav-link", method: :post %>
+            <%end%>
+            <% if user_signed_in? %>
+              <li class="nav-item dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= link_to current_user.email,class:"btn btn-light dropdown-toggle" %>
+                </button> 
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <%= link_to "View Profile", user_path(current_user), class: "dropdown-item" %>
+                   <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %> 
+                   <%= link_to "Create post", new_post_path, class: "dropdown-item" %> 
+                   <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete%> 
+                </div>
+              </li>
+            <%end%>
+          </li>
+          <&nbsp>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <form class="form-inline my-2 my-lg-0" method="GET" action="/search">
+                <input class="form-control mr-sm-2" type="search" placeholder="search any user" aria-label="Search" name="query">
+                  <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </li>  
+          <% end %>
+      </ul>
+    </div>
+</nav> 
