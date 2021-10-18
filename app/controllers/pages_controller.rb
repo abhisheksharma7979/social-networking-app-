@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 class PagesController < ApplicationController
   def home
-    #byebug
     render :home
   end
 
@@ -8,3 +8,4 @@ class PagesController < ApplicationController
   end
   
 end
+
